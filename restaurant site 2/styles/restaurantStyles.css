@@ -1,0 +1,50 @@
+/*
+Name:Philip McGee
+Date Created: 7/10/2019
+Date of last revision: 7/10/2019
+*/
+
+header, footer {
+	background-color: #6a381f;
+	color: #fef9ff;
+	text-align: center;
+}
+header {
+	font-size: 3.0em;
+	padding: 2px 2px 2px 2px;
+	font-family: 'Playfair Display', serif, Arial, 'Courier New';
+}
+footer {
+	font-size: 1.1em;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.clear-float {
+		clear:both;
+}
+nav {
+	border-top: 1px solid #dcab6b;
+	background-color: #dcab6b;
+}
+nav a {
+	background-color: #774e24;
+	color: #fef9ff;
+	padding: 8px;
+	border: thin solid #0d1f2d;
+	text-align: center;
+	display: block;
+
+	width: 100px;
+	float: left;
+	margin: 20px;
+}
+nav a:visited {
+	color: #dcab6b;
+}
+nav a:hover {
+	font-weight: bold;
+	text-decoration:none;
+}
+nav a:active {
+	text-decoration: none;
+}
