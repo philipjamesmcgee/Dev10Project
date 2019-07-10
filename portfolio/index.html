@@ -8,6 +8,39 @@ Most recent revision: 7/9/2019
 	<head>
 	
 		<title>Philip McGee's Portfolio</title>
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		<style>
+			caption {
+				font-weight: bold;
+				font-size: 1.2em;
+				margin-bottom: 8px;
+			}
+			table, th, td {
+				border: 1px solid #0d1f2d;
+				border-collapse: collapse;
+				padding: 5px 10px;
+			}
+			table {
+				width: 90%;
+				margin: auto;
+			}
+			tr {
+				height: 30px
+			}
+			tr:nth-child(odd) {
+					background-color: #ffd39d;
+			}
+			th {
+				background-color: #546a7b;
+				color: #f2eded;
+			}
+			article img {
+				float:left;
+			}
+			
+		
+		</style>
+	
 	
 	</head>
 	<body>
@@ -17,29 +50,35 @@ Most recent revision: 7/9/2019
 		</header>
 		
 		<!-- We need to add links to projects.html, contact.html, and testimonials.html -->
-		<nav>
-		<hr />
-			<pre><a href="index.html">Home</a>		<a href="projects.html">Projects</a>		<a href="contact.html">Contact</a>			<a href="testimonials.html">Testimonials</a></pre>
-		<hr />
+		<nav class="border">
+
+			<p><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="testimonials.html">Testimonials</a></p>
+			<div class="clear-float"></div>
 		</nav>
 		
 		<section>
-			<article id="about-me">
+			<article class="border" id="about-me">
 			<h2><em>About Me </em></h2>
-				<img src="images/headshot.jpg" alt="Portrait of Philip McGee" />
+				<img src="images/headshot.jpg" alt="Portrait of Philip McGee" width="300" />
 				<p> I <span style="background-color: yellow; border:thin dashed green;"> graduated from NDSU </span>with a degree in <strong>Electrical Engineering </strong></p>
-				<p> I am applying for a job with DEV10</p>
+				<p> I am applying for a job with Genesis10. It is a newer program of theirs called DEV10.</p>
+				<p> It will help me become a software developer</p>
+			<div class="clear-float"></div>
 			</article>
 			<article id="past-experiences">
 			<h2><em>Past Experiences</em></h2>
-			<img src="images/constuction.jpg" alt="Picture of concrete." />
-				<table border="1">
+			<img src="images/constuction.jpg" alt="Picture of concrete." width="300" />
+			<div class="right-content">
+				<table>
 				<caption>Employment History</caption>
+				<thead>
 				<tr>
 					<th>Years Employed</th>
 					<th>Employer</th>
 					<th>Title</th>
 				</tr>
+				</thead>
+				<tbody>
 				<tr>
 					<td>2015</td>
 					<td>NTI</td>
@@ -55,16 +94,15 @@ Most recent revision: 7/9/2019
 					<td>NDSU</td>
 					<td>Student</td>
 				</tr>
+				</tbody>
 				</table>
-
-				<!--
-				<p>I worked for a company called NTI</p>
-				<p>I worked at Runnings for <strong>7 years</strong></p>
-				-->
+				</div>
+				<div class="clear-float"></div>
 			</article>
 			<article id="hobbies">
 			<h2><em>Hobbies</em></h2>
-				<img src="images/game.jpg" alt="Picture of board game." />
+				<img src="images/game.jpg" alt="Picture of board game." width="300" />
+				<div class="right-content">
 				<ul>
 				<li>Book Series</li>
 					<ol>
@@ -93,16 +131,12 @@ Most recent revision: 7/9/2019
 						<li>Monopoly</li>
 					</ul>
 				</ul>
-				
-				<!--
-				<p>I enjoy play games of all types with friends</p>
-				<p>I enjoy hiking with my wife</p>
-				-->
+				</div>
+				<div class="clear-float"></div>
 			</article>
 		</section>
 		
 		<footer>
-		<hr />
 		<p>&copy; 2019 Philip McGee. All rights reserved.</p>
 		</footer>
 	</main>
