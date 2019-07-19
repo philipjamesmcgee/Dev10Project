@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+	Name: Philip McGee
+	Date Created: 7/9/19
+	Most recent revision: 7/19/2019
+-->
+<html lang="en">
+	<head>
+		<title>Lucky Sevens</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script type="text/javascript" src="scripts/luckySevens.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+		<style>
+		body{
+			text-align: center;
+			
+		}
+		table{
+			margin: auto;
+		}
+		th {
+			
+			border-top: 1px solid black;
+			text-align: center;
+			font-size: 3em;
+			padding-bottom: 15px;
+		}
+		tbody {
+			border: 2px solid black;
+			border-collapse: collapse;
+		}
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		form {
+			display: inline-block;
+		}
+		h1 {
+			font-size: 4em;
+		}
+		#inputlabel {
+			font-size: 1.5em;
+		}
+		#play{
+			font-size:	1.5em;
+		}
+		
+		
+		</style>
+	</head>
+		
+	<body onload="inital()">
+			<div class="container">
+				<div class="headerrow">
+					<h1 class="">Lucky Sevens</h1>
+				</div>
+				<form name="lucky7" onsubmit="return playGame()">
+					<div class="form-group row">
+						<label id="inputlabel" for="bet" class="col-6">Starting Bet: </label>
+						<input type="text" class="form-control col-6" id="bet" placeholder="Enter a bet.">
+					</div>
+					<div class="form-group row buttonrow">
+					<div class="col-4"></div>
+						<button type="submit" id="play" class="btn btn-default class=col-1">Play</button>
+					</div>
+				</form>
+				<div class="row">
+				<table id="results" style="display:none;">
+					<thead>
+						<tr>
+							<th colspan=2>Results</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Starting Bet</td>
+							<td><span id="startBet"></span></td>
+						</tr>
+						<tr>
+							<td>Total Rolls Before Going Broke</td>
+							<td><span id="rollSum"></span></td>
+						</tr>
+						<tr>
+							<td>Highest Amount Won</td>
+							<td><span id="maxMoney"></span></td>
+						</tr>
+						<tr>
+							<td>Roll Count at Highest Amount Won</td>
+							<td><span id="maxMoneyRollSum"></span></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				
+			</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		</body>
+</html>

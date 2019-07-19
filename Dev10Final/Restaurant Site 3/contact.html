@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+	Name: Philip McGee
+	Date Created: 7/9/19
+	Most recent revision: 7/19/2019
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Contact Us</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		
+		
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="scripts/restaurantSite.js"></script>
+		
+		<link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<style>
+		main{
+			background-color: #2e1000;
+		}
+		section.main {
+			
+			background-color: #c09f7b;
+		}
+		form {
+			padding: 30px 0px 5px 10px;
+			text-align: right;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		.error {
+			border-color: red;
+			margin-left: 10px;
+			
+		}
+		label {
+			font-weight: normal;
+		}
+		label.reqinput {
+			font-weight: bold!important;
+		}
+		.error-message {
+			max-width: 150px;
+			color: red;
+			font-style: italic;
+			
+		}
+		.form-check-input {
+			margin-left: 5px!important;
+		}
+		#checkboxError{
+			color: red;
+			font-style: italic;
+		}
+		
+		</style>
+		<noscript>
+			<div class="noJavaScript">
+				You don't have JavaScript enabled. This site is best viewed with JavaScript
+			</div>
+		</noscript>
+	</head>
+		
+	<body>
+	<main>
+		<header>
+			<p>Feast Kitchen</p>
+		</header>
+		
+		<nav>
+			<ul class="nav nav-tabs nav-justified">
+				<li class="nav-item">
+					<a id="homeTab" class="nav-link" role="tab" aria-controls="home" aria-selected="false" href="home.html"><i class="glyphicon glyphicon-home"></i></a>
+				</li>
+				<li class="nav-item">
+					<a id="menuTab" class="nav-link" role="tab" aria-controls="menu" aria-selected="false" href="menu.html">Menu</a>
+				</li>
+				<li class="nav-item">
+					<a id="contactTab" class="nav-link active" role="tab" aria-controls="contact" aria-selected="true" href="contact.html">Contact Us</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="jumbotron jumbotron-fluid" style="text-align: center;">
+			<div class="container">
+				<h1>NOW OPEN</h1>
+				<h1>New Location</h1>
+				<p>Come check out our new location at <br>40 N. Johnson Street Willingboro, NJ 08046</p>
+			</div>
+		</div>
+	
+		<section>
+		<div class="container">
+		<section class="main">
+		<form name="contactUs" class="validate" onsubmit="return dataChecker()">
+			<div class="form-group row">
+					<label  class="col-5 reqinput" for="Name">Name:</label>
+				<div class="form-check-inline" style="padding-right: 15px;" >	
+					<div>
+						<input type="text" id="Name" name="Name" class="form-control"  style="max-width: 150px;" placeholder="John Doe" required>
+					</div>
+				</div>
+			</div>
+			<div>
+			<div class="form-group row">		
+					<label class="col-5 reqinput" for="Email">Email:</label>
+				<div class="form-check-inline" style="padding-right: 15px;" >	
+					<div>
+						<input type="email" id="Email" name="Email" class="form-control" style="max-width: 150px;" placeholder="ex@test.com" required>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-5 reqinput" for="Phone">Phone:</label>
+				<div class="form-check-inline" style="padding-right: 15px;" >	
+					<div>
+						<input type="tel" id="Phone" name="Phone" pattern="^\d{3}-\d{3}-\d{4}$" class="form-control" style="max-width: 150px;" placeholder="XXX-XXX-XXXX" required>
+					</div>	
+				</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-5" for="Inquiry">Reason for Inquiry:</label>
+				<div class="form-check-inline">			
+						<select id="Inquiry" name="Inquiry">
+							<option value="Catering" selected>Catering</option>
+							<option value="Private-Party">Private Party</option>
+							<option value="Feedback">Feedback</option>
+							<option value="Other">Other</option>
+						</select>
+				</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-5" for="info">Additional Information:</label>
+				<div class="form-check-inline">	
+						<textarea id="info" name="info"></textarea>
+				</div>
+			</div>
+			<div class="form-group row">
+					<label class="col-5" for="radio">Have you been to the restaurant? </label>
+				<div class="form-check form-check-inline">	
+					<input class="form-check-input" type="radio" id="choice2" name="radio" value="no" checked>
+						<label class="form-check-label" for="choice2">No </label>
+				
+					<input class="form-check-input" type="radio" id="choice1" name="radio" value="yes">
+						<label class="form-check-label" for="choice1">Yes </label>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+					<label class="col-5 reqinput" for="contact">Best days to contact you:</label>
+				<div class="form-check form-check-inline">	
+					
+						<label class="form-check-label" for="Monday">
+						<input  class="form-check-input" type="checkbox" id="Monday" name="contact" value="Monday" >
+						M </label>
+				
+						<label class="form-check-label" for="Tuesday">
+						<input  class="form-check-input" type="checkbox" id="Tuesday" name="contact" value="Tuesday" >
+						T </label>
+					
+						<label class="form-check-label" for="Wednesday">
+						<input  class="form-check-input" type="checkbox" id="Wednesday" name="contact" value="Wednesday" >
+						W </label>
+				
+					
+						<label class="form-check-label" for="Thursday">
+						<input  class="form-check-input" type="checkbox" id="Thursday" name="contact" value="Thursday" >
+						Th </label>
+				
+					
+						<label class="form-check-label" for="Friday">
+						<input  class="form-check-input" type="checkbox" id="Friday" name="contact" value="Friday" >
+						F </label>
+					
+				</div>	
+				
+			</div>
+			<div class="form-group" id="checkboxError" style="text-align: center; display: none;">Please select at least one day.</div>
+			<div class="form-group row">
+				<div class="col-5"></div>
+				<div class="form-check-inline">
+					<button type="submit" id="submit" class="btn btn-primary">Send Request</button>	
+				</div>
+			</div>
+		</form>
+		
+	
+		</section>
+		</div>
+		</section>
+			
+		<footer>
+			<p>9108 Franklin St. Newark, NJ, 07103</p>
+			<p>(472) 715-0604</p>
+		</footer>	
+	</main>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	</body>
+</html>
