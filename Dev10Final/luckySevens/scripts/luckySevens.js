@@ -4,7 +4,7 @@
 	Most recent revision: 7/19/2019
 
 */
-
+//remove any errors in the form
 function clearErrors() {
 	for (var loopCounter = 0; loopCounter < document.forms["lucky7"].elements.length; loopCounter++){
 		if (document.forms["lucky7"].elements[loopCounter].parentElement.className.indexOf("has-") !=-1) {
@@ -12,13 +12,13 @@ function clearErrors() {
 		}
 	}
 }
-
+//formate the number with dollar sign and two decimals 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
   minimumFractionDigits: 2
 })
-
+//data the number of die that are passed to the function
 function rollDiceAdder(numDie) {
 	var sum=0;
 	for(i=0; i<numDie; i++){
@@ -26,6 +26,7 @@ function rollDiceAdder(numDie) {
 	}
 	return sum;
 }
+//run on page load and when called to take a bet from the user
 function inital(){
 	var initalbet= (prompt("Please enter your starting bid in dollars."))
 		if(!isNaN(Number(initalbet))){
@@ -35,6 +36,8 @@ function inital(){
 	document.forms["lucky7"]["play"].focus();
 		}
 }
+
+//run when called to reset form and table
 function playAgain(){
 	if(confirm("Play Again")){
 		document.forms["lucky7"]["bet"].value = "";
@@ -43,15 +46,15 @@ function playAgain(){
 		
 	}
 }
-
+//main game function take bet then play until no money remains 
 function playGame() {
 	clearErrors();
 	var bet=  document.forms["lucky7"]["bet"].value;
 	if (bet.charAt(0)==="$")
 	{
-		bet= bet.slice(1,bet.length+1);
+		bet= bet.slice(1,bet.length+1); //get the dollar sign removed
 	}
-	while (bet.indexOf(",",)!=-1){
+	while (bet.indexOf(",",)!=-1){	//remove any commas
 		bet=  bet.replace(/,/i,"");
 	}
 		
@@ -66,7 +69,7 @@ function playGame() {
 		document.form["lucky7"]["bet"].focus();
 		return false
 	}
-	while (gameMoney>0){
+	while (gameMoney>0){ //play only when there is money
 		
 		if (maxMoney<=gameMoney){
 			maxMoney=gameMoney;
@@ -80,6 +83,7 @@ function playGame() {
 		}
 		
 	}
+		//display table and results
 		document.getElementById("results").style.display = "block";
 		document.getElementById("startBet").innerText = formatter.format(betNum);
 		document.getElementById("rollSum").innerText = rollSum;
